@@ -1,11 +1,14 @@
 import time
-i=0
+import tkinter as tk
+
+max_run = 10            #DIESE VARIABLE FÜR DIE ANZAHL DER DURCHLÄUFE ÄNDERN (AKTUELL 10)
+runs = 0
 
 
-while i<= 10:
+while runs < max_run:
     try: 
 
-        ergebnis = 'Fehlerhafte Eingabe'
+        ergebnis = 'Fehlerhafte Eingabe. Nur gültige Rechensymbole verwenden!'
 
         zahl1 = int(input("Was ist die erste Zahl?"))
         rechenart = str(input('Welche Rechenart?'))
@@ -15,7 +18,6 @@ while i<= 10:
 
         if rechenart == '+':
             ergebnis = zahl1+zahl2
-                #{zahl1} {rechenart} {zahl1) == {zahl1+zahl2}  <--- (ALTERNATIVE)
         elif rechenart == '-':
             ergebnis = zahl1-zahl2
         elif (rechenart == ':' or rechenart == '/'):
@@ -28,6 +30,7 @@ while i<= 10:
     except ValueError: 
         print('Fehlerhafte Eingabe. Bitte stellen Sie sicher, dass Sie nur Zahlen eingeben.')
     
+    runs +=1
     time.sleep(1.3)
 
 
